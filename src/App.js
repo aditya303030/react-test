@@ -1,14 +1,22 @@
+import React,{ useState} from "react";
 import './App.css';
 import Main from './components/main';
 
-function App() {
+function App() {  
+  let time = new Date().toLocaleTimeString()
+  //states
+  const [ctime, setcTime] = useState(time)
+  const CurrentTime = () => {
+    time = new Date().toLocaleTimeString()
+    setcTime(time)
+  }
+  setInterval(() => {
+    CurrentTime()
+  }, 1000);
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>react app</h1>
-      </header>
-      <Main />
-    </div>
+    <>
+      <div>{ctime}</div>
+    </>
   );
 }
 
