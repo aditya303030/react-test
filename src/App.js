@@ -1,6 +1,10 @@
 import React,{ useState} from "react";
 import './App.css';
-import Main from './components/main';
+
+import { BrowserRouter } from "react-router-dom";
+// import Main from './components/main';
+
+import Navbar from "./components/navbar";
 
 function App() {  
   let time = new Date().toLocaleTimeString()
@@ -15,6 +19,9 @@ function App() {
   }, 1000);
   return (
     <>
+      <BrowserRouter>
+        <Navbar />
+      </BrowserRouter>     
       <div>{ctime}</div>
     </>
   );
