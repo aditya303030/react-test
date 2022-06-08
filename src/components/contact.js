@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./home components/navbar";
 
-const Main = () => {
+const Contact = () => {
   return (
     <div>
       <Navbar />
-      <h1>Main Page</h1>
+      <h1>Contact Page</h1>
     </div>
   );
 };
   
-export default Main;
+export default Contact; 

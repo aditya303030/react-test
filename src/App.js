@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 // import Main from './components/main';
 import Invoices from "./components/invoices";
-import Main from "./components/main";
+import Contact from "./components/contact";
 import Home from "./components/home";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/invoices" element={<Invoices />}></Route>
-        <Route path="/main" element={<Main />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
       </Routes>
     </Router>     
   );
