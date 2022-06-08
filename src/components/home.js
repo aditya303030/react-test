@@ -1,14 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import '../App.css';
 import Navbar from "./home components/navbar";
 
-const Main = () => {
+const Home = () => {
   return (
-    <div>
+    <div className="container">
       <Navbar />
-      <h1>Main Page</h1>
+      <h1>Home Page</h1>
     </div>
   );
 };
   
-export default Main;
+export default Home;

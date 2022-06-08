@@ -9,27 +9,18 @@ import {
 } from "react-router-dom";
 // import Main from './components/main';
 import Invoices from "./components/invoices";
+import Main from "./components/main";
+import Home from "./components/home";
 
-
-function App() {  
-  // let time = new Date().toLocaleTimeString()
-  // //states
-  // const [ctime, setcTime] = useState(time)
-  // const CurrentTime = () => {
-  //   time = new Date().toLocaleTimeString()
-  //   setcTime(time)
-  // }
-  // setInterval(() => {
-  //   CurrentTime()
-  // }, 1000);
+function App() {
   return (
-    <>
-      <Router>
-        <Routes>
-          <Route path="/invoices" element={Invoices}></Route>    
-        </Routes>
-      </Router>     
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/invoices" element={<Invoices />}></Route>
+        <Route path="/main" element={<Main />}></Route>
+      </Routes>
+    </Router>     
   );
 }
 
