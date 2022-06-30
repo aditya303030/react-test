@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import '../App.css';
+import Calculator from "./home components/calculator";
 import Navbar from "./home components/navbar";
 
 const Home = () => {
@@ -12,10 +13,10 @@ const Home = () => {
   return (
     <div className="container">
       <Navbar />
-      <h1>Home Page</h1>
-      <input placeholder="input text" ></input>
-      <button type="submit" onclick={InputTextHandler}>Submit</button>
-      <h1>{Text}</h1>
+      <Calculator />
+      {/* <input placeholder="input text" onChange={InputTextHandler} ></input>
+      <button type="submit">Submit</button>
+      <h1>{Text}</h1> */}
     </div>
   );
 };
