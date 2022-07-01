@@ -1,7 +1,6 @@
 import React,{useState} from "react";
 import '../App.css';
-import Calculator from "./home components/calculator";
-import Navbar from "./home components/navbar";
+
 
 const Home = () => {
   //states
@@ -12,8 +11,7 @@ const Home = () => {
   }
   return (
     <div className="container">
-      <Navbar />
-      <Calculator />
+     
       {/* <input placeholder="input text" onChange={InputTextHandler} ></input>
       <button type="submit">Submit</button>
       <h1>{Text}</h1> */}

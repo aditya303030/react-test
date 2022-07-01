@@ -1,27 +1,46 @@
-import React,{ useState} from "react";
+import React,{useReducer, useState} from "react";
 import './App.css';
 
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Redirect,
-} from "react-router-dom";
-// import Main from './components/main';
-import Invoices from "./components/invoices";
-import Contact from "./components/contact";
-import Home from "./components/home";
+const ACTIONS = {
+  NEW_TODO: 'new_todo'
+}
+
+const reducer = (todos,action) => {
+  switch(action.type){
+    case ACTIONS.NEW_TODO:
+      return [...todos,newTodos(action.payload.name)]
+    default:
+      return todos
+  }
+}
+
+const newTodos = (name) => {
+  return {id:Math.random(),name:name, completed:false}
+}
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/invoices" element={<Invoices />}></Route>
-        <Route path="/contact" element={<Contact />}></Route>
-      </Routes>
-    </Router>     
-  );
+  const [todos,dispatch] = useReducer(reducer,[])
+  const [name,setName] = useState('')
+  
+  const HandleSubmit = (e) => {
+    e.preventDefault()
+    dispatch({type:ACTIONS.NEW_TODO,payload: {name:name}})
+    setName('')
+  }
+  
+  console.log(todos)
+  return(
+    <>
+      <form onSubmit={HandleSubmit}>
+        <input type="text" value={name} onChange={e => setName(e.target.value)}></input>
+        <ul>
+          {todos.map((key,value)=> {
+            return <li key="{todos.name}">{todos.name}</li>
+          })}
+        </ul>
+      </form>
+    </>
+  )
 }
 
 export default App;
