@@ -1,3 +1,4 @@
+A todo-list app made using useReducer react hook
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
